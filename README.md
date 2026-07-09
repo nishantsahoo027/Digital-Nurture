@@ -2,6 +2,8 @@
 
 This repository contains my completed hands-on exercises for the **Cognizant Digital Nurture – Java Full Stack Engineering** program, organized week by week.
 
+**Author:** Nishant Sahoo · [nishant.sahoo05@gmail.com](mailto:nishant.sahoo05@gmail.com) · Superset ID: **6971155**
+
 Each exercise below lists **where it lives**, **what it demonstrates**, and **how to check/run it**.
 
 > `Digital-Nurture-JavaFSE-main/` holds the original course material (PDFs/DOCX problem statements). All my solutions live under `Week 1/`, `Week 2/`, and `Week 3/`.
