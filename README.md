@@ -4,7 +4,7 @@ This repository contains my completed hands-on exercises for the **Cognizant Dig
 
 Each exercise below lists **where it lives**, **what it demonstrates**, and **how to check/run it**.
 
-> `Digital-Nurture-JavaFSE-main/` holds the original course material (PDFs/DOCX problem statements). All my solutions live under `Week 1/` and `Week 2/`.
+> `Digital-Nurture-JavaFSE-main/` holds the original course material (PDFs/DOCX problem statements). All my solutions live under `Week 1/`, `Week 2/`, and `Week 3/`.
 
 ---
 
@@ -154,6 +154,42 @@ Screenshots (project structure, terminal, localhost, H2 console) are in `screens
 
 ---
 
+## Week 3
+
+### 7. Spring REST with Spring Boot
+Path: `Week 3/spring-rest-handson/` (Maven / Spring Boot project)
+
+A single Spring Boot application covering the Spring REST hands-on set — a plain Hello World endpoint, a `Country` service loaded from Spring XML configuration, and a JWT-based authentication endpoint (Spring Security + `jjwt`). Runs on **port 8083** (see `application.properties`).
+
+| Layer | Key files |
+|-------|-----------|
+| Controllers | `controller/HelloController.java`, `controller/CountryController.java`, `controller/AuthenticationController.java` |
+| Model | `model/Country.java`, `model/AuthenticationResponse.java` |
+| Service / config | `service/CountryService.java`, `resources/country.xml` (Spring XML bean) |
+| Security / JWT | `security/SecurityConfig.java`, `util/JwtUtil.java` |
+
+| Hands-on | Endpoint | Demonstrates |
+|----------|----------|--------------|
+| 1.1 | — | Create a Spring Web project using Maven |
+| 1.4 | `GET /country` | Load `Country` from Spring XML configuration |
+| 2.2 | `GET /hello` | Hello World RESTful web service |
+| 2.3 | `GET /country` | REST Country web service |
+| 2.5 | `GET /countries/{code}` | Get a country by its code |
+| 5.3 | `GET /authenticate` | Authentication service that returns a JWT |
+
+Run (defaults to **port 8083**):
+```bash
+cd "Week 3/spring-rest-handson"
+mvn spring-boot:run
+```
+- Hello: <http://localhost:8083/hello>
+- Country: <http://localhost:8083/country> · by code: <http://localhost:8083/countries/IN>
+- Authenticate: <http://localhost:8083/authenticate> (returns a JWT)
+
+Screenshots for each hands-on are under `Week 3/screenshots/`.
+
+---
+
 ## Verifying screenshots
 
 Every exercise that produces visual output includes a `screenshots/` folder next to its code, so results can be checked without re-running the project.
@@ -172,5 +208,7 @@ Every exercise that produces visual output includes a `screenshots/` folder next
 ├── Week 2/
 │   ├── SLF4J logging framework/
 │   └── Spring Core and Maven/
+├── Week 3/
+│   └── spring-rest-handson/         # Spring Boot REST + JWT auth
 └── Digital-Nurture-JavaFSE-main/   # original course material (reference)
 ```
