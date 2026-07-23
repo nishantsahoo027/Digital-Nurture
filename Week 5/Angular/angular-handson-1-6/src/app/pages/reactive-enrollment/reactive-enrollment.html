@@ -1,0 +1,91 @@
+<h2>Reactive Enrollment Form</h2>
+
+<form [formGroup]="enrollmentForm" (ngSubmit)="onSubmit()">
+
+  <div>
+    <label>Student Name</label><br>
+
+    <input
+      type="text"
+      formControlName="studentName">
+
+    <div *ngIf="enrollmentForm.get('studentName')?.touched &&
+                enrollmentForm.get('studentName')?.invalid">
+
+      Name must contain at least 3 characters.
+
+    </div>
+  </div>
+
+  <br>
+
+  <div>
+    <label>Email</label><br>
+
+    <input
+      type="email"
+      formControlName="email">
+
+    <div *ngIf="enrollmentForm.get('email')?.touched &&
+                enrollmentForm.get('email')?.invalid">
+
+      Enter a valid email.
+
+    </div>
+  </div>
+
+  <br>
+
+  <div>
+    <label>Course ID</label><br>
+
+    <input
+      type="text"
+      formControlName="courseId">
+
+    <div *ngIf="enrollmentForm.get('courseId')?.touched &&
+                enrollmentForm.get('courseId')?.invalid">
+
+      Course ID is required.
+
+    </div>
+  </div>
+
+  <br>
+
+  <div>
+
+    <label>
+
+      <input
+        type="checkbox"
+        formControlName="agree">
+
+      I agree to the terms and conditions.
+
+    </label>
+
+    <div *ngIf="enrollmentForm.get('agree')?.touched &&
+                enrollmentForm.get('agree')?.invalid">
+
+      You must accept the terms.
+
+    </div>
+
+  </div>
+
+  <br>
+
+  <button
+    type="submit"
+    [disabled]="enrollmentForm.invalid">
+
+    Submit
+
+  </button>
+
+</form>
+
+<p *ngIf="submitted">
+  Reactive Form Submitted Successfully!
+</p>

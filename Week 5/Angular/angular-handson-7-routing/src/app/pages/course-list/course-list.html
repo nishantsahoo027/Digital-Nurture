@@ -1,0 +1,15 @@
+<h2>Course List</h2>
+
+<ul>
+  <li *ngFor="let course of courses">
+<a
+  [routerLink]="[course.id]"
+  [queryParams]="{ ref: 'dashboard' }">
+  {{ course.name }}
+</a>
+  </li>
+</ul>
+
+<hr>
+
+<router-outlet></router-outlet>

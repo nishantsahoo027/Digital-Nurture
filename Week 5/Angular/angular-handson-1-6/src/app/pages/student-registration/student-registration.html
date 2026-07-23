@@ -1,0 +1,100 @@
+<h2>Student Registration Form</h2>
+
+<form #studentForm="ngForm" (ngSubmit)="onSubmit()">
+
+  <div>
+
+    <label>Name:</label><br>
+
+    <input
+      type="text"
+      name="name"
+      required
+      minlength="3"
+      [(ngModel)]="student.name"
+      #name="ngModel">
+
+    <div *ngIf="name.invalid && name.touched">
+      Name is required (minimum 3 characters)
+    </div>
+
+  </div>
+
+  <br>
+
+  <div>
+
+    <label>Email:</label><br>
+
+    <input
+      type="email"
+      name="email"
+      required
+      email
+      [(ngModel)]="student.email"
+      #email="ngModel">
+
+    <div *ngIf="email.invalid && email.touched">
+      Enter a valid email
+    </div>
+
+  </div>
+
+  <br>
+
+  <div>
+
+    <label>Phone:</label><br>
+
+    <input
+      type="text"
+      name="phone"
+      required
+      pattern="[0-9]{10}"
+      [(ngModel)]="student.phone"
+      #phone="ngModel">
+
+    <div *ngIf="phone.invalid && phone.touched">
+      Enter a valid 10-digit phone number
+    </div>
+
+  </div>
+
+  <br>
+
+  <div>
+
+    <label>Course:</label><br>
+
+    <select
+      name="course"
+      required
+      [(ngModel)]="student.course"
+      #course="ngModel">
+
+      <option value="">Select Course</option>
+      <option>Angular</option>
+      <option>Java</option>
+      <option>Spring Boot</option>
+      <option>SQL</option>
+      <option>Microservices</option>
+
+    </select>
+
+    <div *ngIf="course.invalid && course.touched">
+      Please select a course
+    </div>
+
+  </div>
+
+  <br>
+
+  <button
+    type="submit"
+    [disabled]="studentForm.invalid">
+
+    Register
+
+  </button>
+
+</form>
